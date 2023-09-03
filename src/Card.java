@@ -114,11 +114,15 @@ public class Card {
 
         //перевести комиссию на счет банка
     }
-    private boolean withdrawal(float sum){
-        deposit = deposit - sum;
-        if(deposit >=0) return true;
-        else return false;
+    private boolean withdrawal(float sum) {
+
+        if (deposit >= sum) {
+            deposit = deposit - sum;
+            return true;
+        } else {
+            String transaction = paySystem + " " + numberCard + ": " + " недостаточно средств на карте " + deposit;
+            setTransactions(transaction);
+            return false;
+        }
     }
-
-
 }
