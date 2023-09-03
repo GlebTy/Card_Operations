@@ -111,6 +111,8 @@ public class Card {
         } while (!transferStatus && errorTransaction < 3);
 
         //и перевести денги на другую карту
+
+        //перевести комиссию на счет банка
     }
     private boolean withdrawal(float sum){
         deposit = deposit - sum;
