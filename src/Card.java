@@ -3,8 +3,6 @@ public class Card {
 
     private float shopBalance;
 
-    private float funds;
-
     private String numberCard;
 
     private String paySystem;
@@ -17,14 +15,6 @@ public class Card {
 
     public float getDeposit() {
         return deposit;
-    }
-
-    public void setFunds(float setFunds) {
-        this.deposit = setFunds;
-    }
-
-    public float getFunds() {
-        return funds;
     }
 
     public void setDeposit(float deposit) {
@@ -103,7 +93,7 @@ public class Card {
         do {
             transferStatus = withdrawal(sumTransfer + comission);
             if (transferStatus) {
-               String transaction = paySystem + " " + numberCard + ": " + "переведено " + sumTransfer + " комиссия составила " + comission + " остаток на карте " + deposit;
+               String transaction = paySystem + " " + numberCard + ": " + "переведено " + sumTransfer + " комиссия составила " + comission + " остаток на карте " + deposit + currency;
                setTransactions(transaction);
                System.out.println(transaction);
             } else errorTransaction++;
@@ -114,6 +104,13 @@ public class Card {
 
         //перевести комиссию на счет банка
     }
+    private void depositing(float sumDepositing) {
+        deposit = deposit +sumDepositing;
+        String transaction = paySystem + " " + numberCard + ": " + "Внесено " + sumDepositing + currency + " остаток на карте " + deposit + currency;
+        setTransactions(transaction);
+
+    }
+
     private boolean withdrawal(float sum) {
 
         if (deposit >= sum) {
