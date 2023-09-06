@@ -3,7 +3,7 @@ public class Main {
     public static void main(String[] args) {
 
      Card visaCard = new Card();
-     visaCard.setFunds(0.00f);
+     visaCard.setDeposit(0.00f);
      visaCard.setNumberCard("4573 6847 3497 1284");
      visaCard.setPaySystem("VISA");
      visaCard.pay(250f);
