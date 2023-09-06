@@ -6,9 +6,10 @@ public class Main {
      visaCard.setDeposit(0.00f);
      visaCard.setNumberCard("4573 6847 3497 1284");
      visaCard.setPaySystem("VISA");
+     visaCard.setCurrency('₽');
      visaCard.pay(250f);
      visaCard.transfer(500.00f);
-     visaCard.setCurrency("RUB");
+
 
      System.out.println("\nОперации по карте " + visaCard.getPaySystem() + " " + visaCard.getNumberCard() + ": ");
      String[] transactions = visaCard.getTransactions();
@@ -21,13 +22,17 @@ public class Main {
      masterCard.setDeposit(5600.00f);
      masterCard.setNumberCard("7836 7562 5734 8693");
      masterCard.setPaySystem("MASTERCARD");
+     masterCard.setCurrency('₽');
      masterCard.pay(600f);
+
 
      Card unionPay = new Card();
      unionPay.setDeposit(228.0f);
      unionPay.setNumberCard("4352 2831 1230 6932");
      unionPay.setPaySystem("UNIONPAY");
+     unionPay.setCurrency('₽');
      unionPay.pay(228f);
+
 
      //создадим массив для карт
         Card[] cards = new Card[3];
