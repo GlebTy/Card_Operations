@@ -11,7 +11,7 @@ public class Card {
 
     private int countTransactions = 0;
 
-    private String[] transactions = new String [5];
+    private String[] transactions = new String [500];
 
     public float getDeposit() {
         return deposit;
@@ -64,6 +64,7 @@ public class Card {
     public void pay (float sumPay) {
         // списать сумму с карты
         boolean payStatus;
+        byte errorTransaction = 0;
       do {
           payStatus = withdrawal(sumPay);
           if (payStatus) {
@@ -71,8 +72,9 @@ public class Card {
               setTransactions(transaction);
               System.out.println(transaction);
               shopBalance = shopBalance + sumPay;
-          }
-      } while (!payStatus);
+          } else errorTransaction++;
+
+      } while (!payStatus && errorTransaction < 3);
        /*
        TODO: перевести денги на счет магазина
          */
