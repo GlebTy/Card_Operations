@@ -18,7 +18,7 @@ public class Main {
      }
 
      Card masterCard = new Card();
-     masterCard.setDeposit(5600.00f);
+     masterCard.depositing(6000f);
      masterCard.setNumberCard("7836 7562 5734 8693");
      masterCard.setPaySystem("MASTERCARD");
      masterCard.pay(600f);
